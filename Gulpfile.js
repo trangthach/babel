@@ -181,7 +181,11 @@ function buildRollup(packages) {
                 },
               }),
               rollupCommonJs({
-                include: [/node_modules/, "packages/babel-preset-env/data/**"],
+                include: [
+                  /node_modules/,
+                  "packages/babel-preset-env/data/**",
+                  "packages/babel-runtime/regenerator/**",
+                ],
                 namedExports: {
                   "babel-plugin-dynamic-import-node/utils.js": [
                     "createDynamicImportTransform",
